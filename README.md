@@ -1,58 +1,55 @@
-ft_printf
+# ft_printf
 
-This project was developed as part of the 42 curriculum by sgomec.
+This project was created as part of the 42 curriculum by sgomec.
 
-Description
+## Description
 
-The ft_printf project consists of recreating the standard C printf() function.
+The ft_printf project consists of recreating the standard C printf() function. Its purpose is to understand variadic functions and learn how formatted output works in C.
 
-The main goal of this project is to understand and implement variadic functions in C, while learning how formatted output works under the hood.
+## Supported Conversions
 
-The implementation reproduces the behavior of printf() for a selected set of format specifiers.
+- `%c`: Prints a character.
+- `%s`: Prints a string.
+- `%p`: Prints a pointer address.
+- `%d`: Prints a decimal integer.
+- `%i`: Prints an integer.
+- `%u`: Prints an unsigned integer.
+- `%x`: Prints a lowercase hexadecimal number.
+- `%X`: Prints an uppercase hexadecimal number.
+- `%%`: Prints a percent sign.
 
-Supported Conversions
-Specifier	Description
-%c	Prints a single character.
-%s	Prints a string.
-%p	Prints a pointer address in hexadecimal format.
-%d	Prints a signed decimal integer.
-%i	Prints an integer in decimal format.
-%u	Prints an unsigned decimal integer.
-%x	Prints an unsigned hexadecimal number in lowercase.
-%X	Prints an unsigned hexadecimal number in uppercase.
-%%	Prints a literal percent sign.
-Compilation
+## Instructions
 
-To compile the project and generate the static library libftprintf.a, run:
+### Compilation
 
-bash
+```sh
 make
+```
 
-Cleaning
+Creates the static library libftprintf.a.
 
-Remove the object files:
+### Cleaning
 
-bash
+```sh
 make clean
-
-
-Remove the object files and the compiled library:
-
-bash
 make fclean
+```
 
-Rebuild
+Removes object files and the compiled library.
 
-Remove previously generated files and rebuild the project:
+### Rebuild
 
-bash
+```sh
 make re
+```
 
-Usage
+Cleans and recompiles the project.
 
-Include the ft_printf.h header file in your C source code:
+## Usage
 
-c
+Include ft_printf.h in your source file:
+
+```c
 #include "ft_printf.h"
 
 int main(void)
@@ -60,37 +57,27 @@ int main(void)
     ft_printf("Hello %s! Number: %d\n", "42", 42);
     return (0);
 }
+```
 
+Compile using:
 
-Compile your program by linking it with the generated static library:
-
-bash
+```sh
 cc main.c libftprintf.a
+```
 
-Algorithm & Data Structures
+## Algorithm & Data Structures
 
-The implementation follows a sequential parsing approach:
+The format string is scanned sequentially, one character at a time. When a % character is found, the next character determines which conversion should be performed.
 
-The format string is scanned character by character.
-When a % character is encountered, the next character is checked to identify the requested conversion.
-A va_list is used to access the corresponding variadic argument.
-The appropriate conversion function handles the argument and prints the formatted output.
+A va_list is used to access the variable arguments. The va_start(), va_arg(), and va_end() macros are used to manage these arguments.
 
-The implementation uses the following macros and functions from <stdarg.h>:
+This approach provides a simple implementation with O(n) parsing complexity, where n represents the length of the format string.
 
-va_list: Stores the list of variadic arguments.
-va_start(): Initializes the argument list.
-va_arg(): Retrieves the next argument.
-va_end(): Cleans up the argument list.
+## Resources
 
-The format string is processed in O(n) time complexity, where n represents its length, assuming each conversion takes constant time.
+- man 3 printf
+- man 3 stdarg
 
-Resources
-man 3 printf
-man 3 stdarg
-C Programming Language documentation
-AI Usage
+## AI Usage
 
-AI tools were used as a learning aid throughout this project to clarify the concepts behind variadic functions, understand format specifiers and conversion rules, explore potential edge cases, and improve the README documentation.
-
-All implementation decisions and code were reviewed as part of the learning process.
+AI was used to clarify variadic functions, understand conversion rules, discuss possible edge cases, and help prepare the README documentation.
