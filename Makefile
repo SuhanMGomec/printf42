@@ -4,14 +4,12 @@ CFLAGS	= -Wall -Wextra -Werror
 
 
 SRCS	= ft_printf.c \
-			ft_putchar.c \
-			ft_putstr.c \
-			ft_putnbr.c \
-			ft_putnbr_base.c \
-			ft_putnbr_unsigned.c \
-			ft_putnbr_hex.c \
-			ft_putnbr_hex_upper.c \
-			ft_putptr.c
+			ft_printfchar.c \
+			ft_printfhex.c \
+			ft_printfptr.c \
+			ft_printfputnbr.c \
+			ft_printfstr.c \
+			ft_printfusgputnbr.c \
 
 OBJS	= $(SRCS:.c=.o)
 
