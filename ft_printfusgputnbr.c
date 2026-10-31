@@ -6,7 +6,7 @@
 /*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 18:28:22 by sgomec            #+#    #+#             */
-/*   Updated: 2026/10/31 15:08:35 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/10/31 15:25:50 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_printfusgputnbr(int *counter, unsigned int nbr)
 	}
 	else
 	{
-		ft_printfusgputnbr(nbr / 10);
-		ft_printfusgputnbr(nbr % 10);
+		ft_printfusgputnbr(counter, nbr / 10);
+		ft_printfusgputnbr(counter, nbr % 10);
 	}
 }
