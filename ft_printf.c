@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*   By: sgomec <sgomec@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/17 20:14:08 by sgomec            #+#    #+#             */
-/*   Updated: 2026/09/19 14:58:37 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/10/31 14:51:44 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,23 +36,23 @@ static int	ft_format(va_list lst, char format)
 
 int	ft_printf(const char *format, ...)
 {
-	va_list	lst;
-	int	len;
+	va_list	args;
+	int		len;
 
 	if (!format)
 		return (-1);
-	va_start(lst,format);
 	len = 0;
+	va_start(args, format);
 	while (*format)
 	{
-		if (*format == '%' && format[1])
-			len += ft_format(lst,*++format);
-		else if (*format == '%' && !format[1])
-			break ;
-		else
+		if (*format != '%')
 			ft_printfchar(&len, *format);
+		else if (format[1])
+			len += ft_format(&args, *++format);
+		else
+			break ;
 		format++;
 	}
-	va_end(lst);
+	va_end(args);
 	return (len);
 }
