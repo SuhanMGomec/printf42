@@ -12,7 +12,11 @@ SRCS	= ft_printf.c \
 
 OBJS	= $(SRCS:.c=.o)
 
+HEADER	= ft_printf.h
+
 all: $(NAME)
+
+$(OBJS): $(HEADER)
 
 $(NAME):$(OBJS)
 	ar rcs $(NAME) $(OBJS)

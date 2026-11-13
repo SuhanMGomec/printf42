@@ -1,4 +1,4 @@
-*This project was created as part of the 42 curriculum by sgomec.*
+*This project has been created as part of the 42 curriculum by sgomec.*
 
 # ft_printf
 
@@ -78,6 +78,6 @@ This approach provides a simple implementation with O(n) parsing complexity, whe
 - man 3 printf
 - man 3 stdarg
 
-## AI Usage
+### AI Usage
 
 AI was used to clarify variadic functions, understand conversion rules, discuss possible edge cases, and help prepare the README documentation.
