@@ -2,7 +2,6 @@ NAME	= libftprintf.a
 CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 
-
 SRCS	= ft_printf.c \
 			ft_printfchar.c \
 			ft_printfhex.c \

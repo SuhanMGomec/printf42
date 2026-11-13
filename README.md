@@ -1,6 +1,6 @@
-# ft_printf
+*This project was created as part of the 42 curriculum by sgomec.*
 
-This project was created as part of the 42 curriculum by sgomec.
+# ft_printf
 
 ## Description
 

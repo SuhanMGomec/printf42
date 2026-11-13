@@ -6,7 +6,7 @@
 /*   By: sgomec <sgomec@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 18:43:07 by sgomec            #+#    #+#             */
-/*   Updated: 2026/09/17 20:10:09 by sgomec           ###   ########.fr       */
+/*   Updated: 2026/10/31 16:50:28 by sgomec           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 
+int		ft_printf(const char *format, ...);
 void	ft_printfchar(int *counter, char c);
 void	ft_printfhex(int *counter, unsigned long n, char format);
 void	ft_printfstr(int *counter, char *str);
